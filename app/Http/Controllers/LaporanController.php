@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Laporan;
 use Illuminate\Http\Request;
-use PDF; // ← Tambahkan ini untuk PDF export
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class LaporanController extends Controller
 {
@@ -52,10 +52,11 @@ class LaporanController extends Controller
         return redirect()->back()->with('success', 'Status diperbarui.');
     }
 
-    public function cetakPdf()
+    public function cetakSemua()
 {
     $data = \App\Models\Laporan::all();
-    $pdf = PDF::loadView('admin.laporan_pdf', compact('data'));
-    return $pdf->download('laporan_pengaduan.pdf');
+    $pdf = \Barryvdh\DomPDF\Facade\Pdf::loadView('laporan.pdf', compact('data'));
+    return $pdf->download('laporan-pengaduan.pdf');
 }
+
 }

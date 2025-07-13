@@ -1,42 +1,87 @@
 @extends('layout')
 @section('title', 'Detail Laporan')
+
 @section('content')
+<div class="container d-flex justify-content-center">
+    <div style="width: 100%; max-width: 720px;">
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Detail Laporan</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="p-4">
-    <div class="container">
-        <h3>Detail Laporan #{{ $laporan->id }}</h3>
+        <h4 class="mb-4 text-primary fw-semibold">
+            <i class="bi bi-info-circle me-1"></i> Detail Laporan #{{ $laporan->id }}
+        </h4>
 
-        <div class="card mt-3">
+        {{-- Informasi Laporan --}}
+        <div class="card border-0 mb-4 shadow-sm" style="background-color: #f9fbfc;">
+            <div class="card-header bg-light fw-semibold">
+                Informasi Pengaduan
+            </div>
             <div class="card-body">
-                <p><strong>Nama:</strong> {{ $laporan->nama }}</p>
-                <p><strong>NIK:</strong> {{ $laporan->nik ?? '-' }}</p>
-                <p><strong>Email:</strong> {{ $laporan->email ?? '-' }}</p>
-                <p><strong>Jenis Laporan:</strong> {{ $laporan->jenis_laporan }}</p>
-                <p><strong>Isi:</strong> {{ $laporan->isi_laporan }}</p>
-                <p><strong>Status Saat Ini:</strong> 
-                    <span class="badge bg-{{ $laporan->status == 'Menunggu' ? 'warning' : ($laporan->status == 'Diproses' ? 'primary' : 'success') }}">
+                <div class="row mb-2">
+                    <div class="col-md-6">
+                        <p class="mb-1 text-muted">Nama</p>
+                        <p class="fw-semibold">{{ $laporan->nama }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="mb-1 text-muted">NIK</p>
+                        <p class="fw-semibold">{{ $laporan->nik ?? '-' }}</p>
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-md-6">
+                        <p class="mb-1 text-muted">Email</p>
+                        <p class="fw-semibold">{{ $laporan->email ?? '-' }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="mb-1 text-muted">Jenis Laporan</p>
+                        <p class="fw-semibold">{{ $laporan->jenis_laporan }}</p>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <p class="mb-1 text-muted">Isi Laporan</p>
+                    <p class="fw-semibold">{{ $laporan->isi_laporan }}</p>
+                </div>
+
+                <div class="mb-3">
+                    <p class="mb-1 text-muted">Status Saat Ini</p>
+                    <span class="badge 
+                        {{ $laporan->status == 'Menunggu' ? 'bg-warning text-dark' : 
+                            ($laporan->status == 'Diproses' ? 'bg-primary' : 'bg-success') }}">
                         {{ $laporan->status }}
                     </span>
-                </p>
-                <form action="/admin/laporan/{{ $laporan->id }}/update-status" method="POST" class="mt-3">
+                </div>
+            </div>
+        </div>
+
+        {{-- Form Update Status --}}
+        <div class="card border-0 shadow-sm" style="background-color: #f9fbfc;">
+            <div class="card-header bg-light fw-semibold">
+                Perbarui Status Laporan
+            </div>
+            <div class="card-body">
+                <form action="/admin/laporan/{{ $laporan->id }}/update-status" method="POST">
                     @csrf
-                    <label>Ubah Status:</label>
-                    <select name="status" class="form-control mb-2" required>
-                        <option value="Menunggu" {{ $laporan->status == 'Menunggu' ? 'selected' : '' }}>Menunggu</option>
-                        <option value="Diproses" {{ $laporan->status == 'Diproses' ? 'selected' : '' }}>Diproses</option>
-                        <option value="Selesai" {{ $laporan->status == 'Selesai' ? 'selected' : '' }}>Selesai</option>
-                    </select>
-                    <button class="btn btn-success">Perbarui Status</button>
-                    <a href="/admin/laporan" class="btn btn-secondary ms-2">Kembali</a>
+                    <div class="mb-3">
+                        <label for="status" class="form-label">Ubah Status</label>
+                        <select name="status" id="status" class="form-select rounded-3" required>
+                            <option value="Menunggu" {{ $laporan->status == 'Menunggu' ? 'selected' : '' }}>Menunggu</option>
+                            <option value="Diproses" {{ $laporan->status == 'Diproses' ? 'selected' : '' }}>Diproses</option>
+                            <option value="Selesai" {{ $laporan->status == 'Selesai' ? 'selected' : '' }}>Selesai</option>
+                        </select>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <a href="/admin/laporan" class="btn btn-outline-secondary">
+                            <i class="bi bi-arrow-left me-1"></i> Kembali
+                        </a>
+                        <button type="submit" class="btn btn-success">
+                            <i class="bi bi-check-circle me-1"></i> Simpan Perubahan
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
+
     </div>
-</body>
-</html>
+</div>
+@endsection

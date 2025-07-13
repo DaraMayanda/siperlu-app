@@ -10,3 +10,6 @@ Route::get('/admin/laporan/{id}', [LaporanController::class, 'show']);
 Route::post('/admin/laporan/{id}/update-status', [LaporanController::class, 'updateStatus']);
 Route::get('/admin/laporan/pdf', [LaporanController::class, 'cetakPdf']);
 
+Route::get('/admin/laporan/pdf', [LaporanController::class, 'cetakSemua'])->name('laporan.pdf');
+
+
