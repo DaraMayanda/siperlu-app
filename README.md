@@ -50,7 +50,7 @@ SIPERLU adalah aplikasi web berbasis Laravel yang dirancang untuk mengelola peng
 
 ## 📌 Cara Menjalankan Proyek Ini
 
-``bash
+```bash
 git clone https://github.com/DaraMayanda/siperlu-app.git
 cd siperlu-app
 composer install
@@ -58,15 +58,3 @@ cp .env.example .env
 php artisan key:generate
 php artisan migrate
 php artisan serve
-
-
----
-
-## 👩‍💻 Tentang Developer
-
-**Dara Mayanda**  
-Mahasiswa Teknik Informatika – Universitas Malikussaleh  
-📍 Medan, Sumatera Utara  
-📫 GitHub: [@DaraMayanda](https://github.com/DaraMayanda)
-
-----
