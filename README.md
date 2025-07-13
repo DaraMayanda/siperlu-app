@@ -38,13 +38,14 @@ SIPERLU adalah aplikasi web berbasis Laravel yang dirancang untuk mengelola peng
 ## 📷 Tampilan Antarmuka
 
 ### 🔹 Formulir Pengaduan
-![Formulir Pengaduan Layanan](screenshots/formulir_Pengaduan_Layanan.png)
+![Formulir](public/screenshots/Formulir_Pengaduan.png)
 
-### 🔹 Daftar Laporan Pengaduan
-![Daftar Laporan Pengaduan](screenshots/Daftar_Laporan_Pengaduan.png)
+### 🔹 Daftar Laporan
+![Daftar](public/screenshots/Daftar_Laporan_Pengaduan.png)
 
 ### 🔹 Detail Laporan
-![Detail Laporan](screenshots/Detail_Laporan.png)
+![Detail](public/screenshots/Detail_Laporan.png)
+
 
 ---
 
