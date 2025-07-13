@@ -6,44 +6,51 @@ SIPERLU adalah aplikasi web berbasis Laravel yang dirancang untuk mengelola peng
 
 ## ✨ Fitur Utama
 
-- ✅ Formulir pengaduan masyarakat berbasis web
-- ✅ Validasi input & pelaporan status secara real-time
-- ✅ Panel admin untuk memantau dan mengelola laporan
-- ✅ Ekspor laporan dalam format PDF menggunakan DomPDF
-- ✅ Tampilan responsif & modern menggunakan Bootstrap 5
+- ✅ Formulir pengaduan masyarakat berbasis web  
+- ✅ Validasi input & pelaporan status secara real-time  
+- ✅ Panel admin untuk memantau dan mengelola laporan  
+- ✅ Ekspor laporan dalam format PDF menggunakan DomPDF  
+- ✅ Tampilan responsif & modern menggunakan Bootstrap 5  
 
 ---
 
 ## 🛠️ Teknologi yang Digunakan
 
-- **Framework:** Laravel 9
-- **Frontend:** Blade + Bootstrap 5 + Icons
-- **Database:** MySQL
-- **PDF Generator:** DomPDF
+- **Framework:** Laravel 9  
+- **Frontend:** Blade + Bootstrap 5 + Bootstrap Icons  
+- **Database:** MySQL  
+- **PDF Generator:** DomPDF  
 
 ---
 
 ## 📁 Struktur Folder Penting
 
-| Folder / File        | Keterangan                                  |
-|----------------------|---------------------------------------------|
-| `/app`               | Backend utama: Controller, Model, Middleware |
-| `/routes/web.php`    | Routing aplikasi                            |
-| `/resources/views`   | Template tampilan Blade (HTML)              |
-| `/public`            | Aset publik (CSS, JS, icon, gambar)         |
-| `composer.json`      | Daftar dependency Laravel                   |
+| Folder / File          | Keterangan                                      |
+|------------------------|-------------------------------------------------|
+| `/app`                 | Backend utama: Controller, Model, Middleware   |
+| `/routes/web.php`      | Routing aplikasi                                |
+| `/resources/views`     | Template tampilan Blade (HTML)                  |
+| `/public`              | Aset publik (CSS, JS, icon, gambar)             |
+| `composer.json`        | Daftar dependency Laravel                       |
 
 ---
 
 ## 📷 Tampilan Antarmuka
 
-> Antarmuka seperti form pengaduan, daftar laporan, dan detail laporan tersedia di folder `/resources/views`.
+### 🔹 Formulir Pengaduan
+![Formulir Pengaduan Layanan](screenshots/formulir_Pengaduan_Layanan.png)
+
+### 🔹 Daftar Laporan Pengaduan
+![Daftar Laporan Pengaduan](screenshots/Daftar_Laporan_Pengaduan.png)
+
+### 🔹 Detail Laporan
+![Detail Laporan](screenshots/Detail_Laporan.png)
 
 ---
 
 ## 📌 Cara Menjalankan Proyek Ini
 
-```bash
+``bash
 git clone https://github.com/DaraMayanda/siperlu-app.git
 cd siperlu-app
 composer install
@@ -52,9 +59,14 @@ php artisan key:generate
 php artisan migrate
 php artisan serve
 
-👩‍💻 Developer
-Dara Mayanda
-Mahasiswa Teknik Informatika – Universitas Malikussaleh
-📍 Medan, Sumatera Utara
-📫 GitHub: @DaraMayanda
 
+---
+
+## 👩‍💻 Tentang Developer
+
+**Dara Mayanda**  
+Mahasiswa Teknik Informatika – Universitas Malikussaleh  
+📍 Medan, Sumatera Utara  
+📫 GitHub: [@DaraMayanda](https://github.com/DaraMayanda)
+
+----
